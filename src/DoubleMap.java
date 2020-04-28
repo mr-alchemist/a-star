@@ -17,10 +17,10 @@ public class DoubleMap {
 		if(key == null || value == null)throw new IllegalArgumentException();
 		
 		Double prevValue = map1.put(key, value);
-		if(prevValue == null) {//в map1 не было такого key, т.е. он только сейчас добавился. Поэтому нужно просто добавить пару в map2
+		if(prevValue == null) {//РІ map1 РЅРµ Р±С‹Р»Рѕ С‚Р°РєРѕРіРѕ key, С‚.Рµ. РѕРЅ С‚РѕР»СЊРєРѕ СЃРµР№С‡Р°СЃ РґРѕР±Р°РІРёР»СЃСЏ. РџРѕСЌС‚РѕРјСѓ РЅСѓР¶РЅРѕ РїСЂРѕСЃС‚Рѕ РґРѕР±Р°РІРёС‚СЊ РїР°СЂСѓ РІ map2
 			addToMap2(key, value);
 		}
-		else {//нужно "мигрировать" теперь id к другому dvalue
+		else {//РЅСѓР¶РЅРѕ "РјРёРіСЂРёСЂРѕРІР°С‚СЊ" С‚РµРїРµСЂСЊ id Рє РґСЂСѓРіРѕРјСѓ dvalue
 			changeDValueOfId(key, prevValue, value);
 		}
 	}

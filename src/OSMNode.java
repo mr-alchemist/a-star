@@ -5,7 +5,7 @@ public class OSMNode {
 	public long id;
 	public double lat;
 	public double lon;
-	//в списке linkedTo хранить id(Long) или ссылки на объекты OSMNode?
+	//РІ СЃРїРёСЃРєРµ linkedTo С…СЂР°РЅРёС‚СЊ id(Long) РёР»Рё СЃСЃС‹Р»РєРё РЅР° РѕР±СЉРµРєС‚С‹ OSMNode?
 	//public List<Long> linkedTo = new LinkedList<Long>();
 	public List<OSMNode> linkedTo = new LinkedList<OSMNode>();
 }

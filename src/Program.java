@@ -60,7 +60,7 @@ public class Program {
 			F.remove(curr);
 			closed.add(curr);
 			OSMNode currNode = osmData.get(curr);
-			//цикл перебора соседей curr, не входящих в close
+			//С†РёРєР» РїРµСЂРµР±РѕСЂР° СЃРѕСЃРµРґРµР№ curr, РЅРµ РІС…РѕРґСЏС‰РёС… РІ close
 			Iterator<OSMNode> iter = currNode.linkedTo.iterator();
 			while(iter.hasNext()) {
 				OSMNode neighborNode = iter.next();
@@ -130,7 +130,7 @@ public class Program {
 			
 			
 			int nodeListLength = osmNodeList.getLength();
-			for(int i = 0; i < nodeListLength; i++) {//цикл иду по всем объектам node, добавляю каждый в osmData(id, координаты)
+			for(int i = 0; i < nodeListLength; i++) {//С†РёРєР» РёРґСѓ РїРѕ РІСЃРµРј РѕР±СЉРµРєС‚Р°Рј node, РґРѕР±Р°РІР»СЏСЋ РєР°Р¶РґС‹Р№ РІ osmData(id, РєРѕРѕСЂРґРёРЅР°С‚С‹)
 				NamedNodeMap attrs = osmNodeList.item(i).getAttributes();
 				double lat = Double.parseDouble(attrs.getNamedItem("lat").getTextContent());
 				double lon = Double.parseDouble(attrs.getNamedItem("lon").getTextContent());
@@ -152,7 +152,7 @@ public class Program {
 			
 			NodeList osmWayList = document.getElementsByTagName("way");
 			int wayListLength = osmWayList.getLength();
-			for(int i = 0; i < wayListLength; i++) {//цикл по всем объектам way
+			for(int i = 0; i < wayListLength; i++) {//С†РёРєР» РїРѕ РІСЃРµРј РѕР±СЉРµРєС‚Р°Рј way
 				Node way = osmWayList.item(i);
 				Long[] nodeIds = getIdsFromWayNode(way);
 				for(int j = 0; j < nodeIds.length; j++) {
@@ -190,7 +190,7 @@ public class Program {
 			Node currItem = wayChildNodes.item(j);
 			if(currItem.getNodeType() != Node.ELEMENT_NODE)continue;
 			if(!currItem.getNodeName().equals("nd"))continue;
-			String ref = currItem.getAttributes().getNamedItem("ref").getTextContent();//TODO добавить проверку getNamedItem("ref") на null
+			String ref = currItem.getAttributes().getNamedItem("ref").getTextContent();//TODO РґРѕР±Р°РІРёС‚СЊ РїСЂРѕРІРµСЂРєСѓ getNamedItem("ref") РЅР° null
 			long nodeId = Long.parseLong(ref);
 			list.add(nodeId);
 			
